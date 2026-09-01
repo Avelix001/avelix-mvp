@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS profiles (
+id INTEGER PRIMARY KEY AUTOINCREMENT, avx_id TEXT UNIQUE NOT NULL, full_name TEXT NOT NULL,
+title TEXT, organization TEXT, industry TEXT, location TEXT, email TEXT, phone TEXT,
+website TEXT, bio TEXT, status TEXT NOT NULL DEFAULT 'ACTIVE',
+created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

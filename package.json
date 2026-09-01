@@ -1,0 +1,1 @@
+{"name":"avelix-mvp","private":true,"type":"module","scripts":{"deploy":"wrangler deploy"}}
