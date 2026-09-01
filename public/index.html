@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>AVELIX — Prove Your Potential</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+margin:0;
+background:#050817;
+color:#f7f8ff;
+font:16px Arial;
+line-height:1.5;
+}
+
+nav,main{
+max-width:1150px;
+margin:auto;
+padding:0 22px;
+}
+
+nav{
+height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #1c2540;
+}
+
+.logo{
+font-size:28px;
+font-weight:900;
+letter-spacing:6px;
+background:linear-gradient(90deg,#bd62ff,#159cff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+}
+
+.hero{
+min-height:580px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.pill{
+display:inline-block;
+border:1px solid #9a4cff55;
+background:#9a4cff12;
+padding:8px 13px;
+border-radius:99px;
+color:#dccbff;
+}
+
+h1{
+font-size:clamp(48px,7vw,78px);
+line-height:1;
+margin:22px 0;
+}
+
+h1 span{
+background:linear-gradient(90deg,#fff,#b45cff,#35baff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+color:#a9b2ca;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+padding:13px 19px;
+border-radius:11px;
+border:0;
+color:white;
+background:linear-gradient(100deg,#9a4cff,#159cff);
+cursor:pointer;
+text-decoration:none;
+}
+
+.card{
+aspect-ratio:1.58;
+border-radius:24px;
+padding:28px;
+background:linear-gradient(135deg,#eef0f4,#9da3b0,#f5f6fa);
+color:#111522;
+box-shadow:0 30px 80px #0008;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+}
+
+.top b{
+font-size:28px;
+letter-spacing:5px;
+}
+
+.tiny{
+margin-top:35px;
+letter-spacing:2px;
+}
+
+.seal{
+float:right;
+margin-top:70px;
+width:80px;
+height:80px;
+border-radius:50%;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,#9a4cff,#159cff);
+color:#fff;
+font-size:35px;
+}
+
+.section{
+padding:65px 0;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.box{
+padding:22px;
+border:1px solid #1d2742;
+border-radius:18px;
+background:#ffffff06;
+}
+
+.box p{
+color:#a9b2ca;
+}
+
+.form{
+max-width:720px;
+display:grid;
+gap:13px;
+}
+
+.form input,
+.form textarea{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #25304c;
+background:#070b18;
+color:#fff;
+}
+
+.out{
+margin-top:20px;
+padding:18px;
+border:1px solid #4dd99755;
+background:#4dd99710;
+border-radius:14px;
+display:none;
+}
+
+.qr{
+max-width:180px;
+background:white;
+padding:10px;
+}
+
+footer{
+text-align:center;
+border-top:1px solid #1d2742;
+padding:25px;
+color:#727d99;
+}
+
+@media(max-width:800px){
+.hero,.grid{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">AVELIX</div>
+<a href="#create">CREATE ID</a>
+</nav>
+
+<main>
+
+<section class="hero">
+
+<div>
+
+<span class="pill">✓ Digital trust & verification</span>
+
+<h1>
+Prove your <span>potential.</span>
+</h1>
+
+<p>
+Turn a physical card into a digital profile.
+Create an AVELIX ID and share it through a QR code.
+</p>
+
+<a class="btn" href="#create">
+Create My AVELIX ID
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="top">
+<b>AVELIX</b>
+<small>PLATINUM</small>
+</div>
+
+<div class="tiny">
+DIGITAL CREDENTIAL
+</div>
+
+<h2>VERIFIED PROFILE</h2>
+
+<p>Scan → Verify → Trust</p>
+
+<div class="seal">✓</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>How it works</h2>
+
+<div class="grid">
+
+<div class="box">
+<b>01 · Create</b>
+<p>
+Enter your basic professional information.
+</p>
+</div>
+
+<div class="box">
+<b>02 · Get your ID</b>
+<p>
+AVELIX creates a unique credential ID.
+</p>
+</div>
+
+<div class="box">
+<b>03 · Share</b>
+<p>
+Scan the QR code to open the digital profile.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section" id="create">
+
+<h2>Create your AVELIX ID</h2>
+
+<form class="form" id="f">
+
+<input name="full_name"
+placeholder="Full name *"
+required>
+
+<input name="title"
+placeholder="Job title / role">
+
+<input name="organization"
+placeholder="Organization / business">
+
+<input name="industry"
+placeholder="Industry">
+
+<input name="location"
+placeholder="Location">
+
+<input name="email"
+type="email"
+placeholder="Email">
+
+<input name="phone"
+placeholder="Phone">
+
+<textarea name="bio"
+placeholder="Short professional description">
+</textarea>
+
+<button class="btn">
+Generate AVELIX ID
+</button>
+
+</form>
+
+<div class="out" id="out"></div>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 AVELIX · MVP Prototype
+</footer>
+
+<script>
+
+f.onsubmit = async e => {
+
+e.preventDefault();
+
+let d = Object.fromEntries(new FormData(f));
+
+let r = await fetch("/api/create",{
+method:"POST",
+headers:{
+"content-type":"application/json"
+},
+body:JSON.stringify(d)
+});
+
+let x = await r.json();
+
+out.style.display="block";
+
+out.innerHTML = r.ok
+
+? `<b>✓ AVELIX ID CREATED</b>
+<p><strong>${x.avx_id}</strong></p>
+<p>
+<a href="${x.url}" style="color:#d8c8ff">
+Open public profile
+</a>
+</p>
+<img class="qr"
+src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(x.url)}">
+<p>Put this QR on your AVELIX card.</p>`
+
+: `<b>${x.error || "Error"}</b>`;
+
+};
+
+</script>
+
+</body>
+</html>
