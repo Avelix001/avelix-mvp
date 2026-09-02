@@ -10,7 +10,7 @@
     {
       "binding": "DB",
       "database_name": "avelix-db",
-      "database_id": "3a3a075d-e5e1-45be-921d-ea0bdcaf27a9"
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID"
     }
   ]
 }

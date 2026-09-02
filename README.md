@@ -1,10 +1,22 @@
-# AVELIX Cloudflare MVP
-Cloudflare Workers + D1 prototype. Create an AVX ID, save a public profile, and expose `/v/AVX-XXXXXX`.
+# AVELIX Cloudflare MVP — Member System
 
-1. Create a D1 database called `avelix-db`.
-2. Replace `REPLACE_WITH_D1_DATABASE_ID` in `wrangler.json` with its ID.
-3. Run `schema.sql` against the D1 database.
-4. Push all files to GitHub.
-5. Deploy with `npx wrangler deploy`.
+## Included
+- AVELIX registration + unique AVX ID
+- Secure login/session cookies
+- Member dashboard
+- Profile editing
+- One-scan temporary QR sharing
+- Public AVELIX profile URLs
+- Coming Soon cards for Verified Credentials, Basic Card and Platinum Card
+- Cloudflare Workers + D1 + Static Assets architecture
 
-The QR image is generated through an external QR image endpoint for this presentation MVP. For production, generate it inside your own Worker and add authentication, privacy, consent, rate limits and a formal verification process.
+## Database
+Run `schema.sql` against the existing AVELIX D1 database before deploying the updated Worker.
+
+Example with Wrangler:
+`npx wrangler d1 execute avelix-db --remote --file=./schema.sql`
+
+## Deploy
+`npx wrangler deploy`
+
+The secure QR uses a random token and stores only its SHA-256 hash in D1. The QR itself does not contain profile information. It is limited to one successful scan and expires after 30 minutes.
