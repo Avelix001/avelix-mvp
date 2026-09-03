@@ -31,7 +31,7 @@ function base32Decode(input) {
 }
 async function hmacSha1(keyBytes, counter) {
   const data = new ArrayBuffer(8); const view = new DataView(data); view.setUint32(0, Math.floor(counter / 0x100000000)); view.setUint32(4, counter >>> 0);
-  const key = awaitcrypto.subtle.importKey('raw', keyBytes, { name:'HMAC', hash:'SHA-1' }, false, ['sign']);
+  const key = await crypto.subtle.importKey('raw', keyBytes, { name:'HMAC', hash:'SHA-1' }, false, ['sign']);
   return new Uint8Array(await crypto.subtle.sign('HMAC', key, data));
 }
 async function totpCode(secret, timestamp = Date.now()) {
