@@ -2,7 +2,9 @@
   "$schema": "https://json.schemastore.org/wrangler.json",
   "name": "avelix-mvp",
   "main": "src/index.js",
-  "compatibility_date": "2026-08-30",
+  "compatibility_date": "2026-08-30","observability": {
+  "enabled": true
+},
   "assets": {
     "directory": "./public"
   },
