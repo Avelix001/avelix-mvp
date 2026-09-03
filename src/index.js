@@ -112,7 +112,9 @@ async function register(request, env) {
   const hash = await passwordHash(password);
   const profileResult = await env.DB.prepare(`INSERT INTO profiles (avx_id, account_type, full_name, title, organization, industry, location, email, phone, website, bio, status, cac_number, referral_code, referred_by_profile_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active', ?, ?, ?)`)
     .bind(avxId, accountType, fullName, body.title || '', organization, body.industry || '', body.location || '', email, body.phone || '', body.website || '', body.bio || '', cacNumber, myReferralCode, referrer?.id || null).run();
-  const profile = await env.DB.prepare('SELECT id FROM profiles WHERE avx_id=?').bind(avxId).first();
+  const profile = await env.DB.prepare('SELECT id FROM profiles WHERE avx_id=?').bind(avxId).first();if (!profile?.id) {
+  throw new Error('Registration failed: profile was created but could not be retrieved.');
+  }
   try {
     await env.DB.prepare('INSERT INTO users (profile_id, email, password_hash) VALUES (?, ?, ?)').bind(profile.id, email, hash).run();
     if (referrer) await env.DB.prepare('UPDATE profiles SET referral_count=referral_count+1 WHERE id=?').bind(referrer.id).run();
