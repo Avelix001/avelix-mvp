@@ -19,6 +19,10 @@ nav{height:78px;display:flex;align-items:center;justify-content:space-between;bo
 footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0;color:#68738b;font-size:12px;display:flex;justify-content:space-between;gap:20px}.footerbrand{font-weight:900;letter-spacing:3px;color:#aeb7c9}
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:65px;gap:30px}.stage{min-height:390px}.grid,.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.founding{align-items:flex-start;flex-direction:column}.navlinks a:first-child{display:none}h1{letter-spacing:-2.5px}.identity-card{transform:rotate(2deg)}.floating.one{right:0}.floating.two{left:0}}
 @media(max-width:520px){.wrap{width:min(100% - 26px,1160px)}nav{height:68px}.brand{font-size:19px}.navbtn{padding:8px 11px;font-size:12px}.hero{padding:55px 0 35px}h1{font-size:48px}.lead{font-size:16px}.primary,.secondary{width:100%}.stage{min-height:330px}.halo{width:280px;height:280px}.identity-card{padding:19px;border-radius:20px}.cardlogo{font-size:20px}.cardline{margin:20px 0}.qrmini{width:52px;height:52px;right:18px;bottom:18px}.floating{font-size:10px;padding:9px 11px}.floating.one{top:15px}.floating.two{bottom:25px}.cta{padding:32px 20px}.footer{display:block}}
+
+.video-section{padding:10px 0 55px}.video-wrap{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#070b18;box-shadow:0 25px 70px rgba(0,0,0,.35)}.video-wrap video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#050817}.video-note{padding:16px 18px;color:#8f9ab2;font-size:12px}.card-showcase{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}.show-card{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.035);padding:18px;position:relative}.show-card img{display:block;width:100%;border-radius:16px;border:1px solid #29365c}.show-card h3{margin:14px 0 4px}.show-card p{margin:0;color:#8f9ab2;font-size:13px}.soon-badge{position:absolute;top:30px;right:30px;z-index:2;padding:7px 10px;border-radius:999px;background:#111a36;border:1px solid #33436c;color:#c5d1ef;font-size:9px;font-weight:900;letter-spacing:.13em}@media(max-width:800px){.card-showcase{grid-template-columns:1fr}}
+
+.guidance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}.guidance-card{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:rgba(255,255,255,.035);box-shadow:0 20px 55px rgba(0,0,0,.22)}.guidance-card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}.guidance-body{padding:20px}.guidance-body h3{margin:0 0 8px;font-size:21px}.guidance-body p{margin:0;color:#8f9ab2;font-size:13px;line-height:1.6}.guidance-link{display:inline-block;margin-top:14px;color:#bfa7ff;text-decoration:none;font-weight:800;font-size:12px}.job-guide{margin-top:18px;padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,rgba(139,77,255,.10),rgba(21,156,255,.06))}.job-guide strong{display:block;font-size:16px;margin-bottom:6px}.job-guide span{color:#9ca9ca;font-size:13px}@media(max-width:800px){.guidance-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -57,6 +61,28 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0;color:#68738b;f
         <div><b>✦ AVELIX 1,000 FOUNDING MEMBERS</b><p>Join the first generation building the AVELIX professional identity network.</p></div>
         <span class="badge">FOUNDING PROFILE · FREE</span>
       </div>
+
+      <section class="video-section">
+        <div class="sectionhead"><span class="kicker">AVELIX INTRODUCTION</span><h2>Meet the professional identity layer.</h2><p>See how AVELIX is being built to help people and businesses prove what they have achieved and share trusted professional information.</p></div>
+        <div class="video-wrap"><video controls preload="metadata" poster="/avelix-platinum-card.png"><source src="/avelix-intro.mp4" type="video/mp4">Your browser does not support the AVELIX introduction video.</video><div class="video-note">AVELIX · Prove Your Potential. This introduction describes the platform vision and upcoming capabilities.</div></div>
+      </section>
+
+      <section class="section" id="opportunities">
+        <div class="sectionhead"><span class="kicker">FOR JOB SEEKERS & EMPLOYERS</span><h2>Turn your qualifications into opportunities.</h2><p>These product-guidance scenes show the direction of AVELIX: individuals can use their skills, qualifications and certificates to discover relevant opportunities, while employers can find talent using verified evidence.</p></div>
+        <div class="guidance-grid">
+          <article class="guidance-card"><img src="/job-seekers-guidance.jpg" alt="AVELIX job seeker guidance"><div class="guidance-body"><h3>For Job Seekers</h3><p>Build your AVELIX profile with your skills, qualifications and certificates. The Job Search tool compares that information with available opportunities and highlights the strongest matches.</p><a class="guidance-link" href="/register.html">Build your profile →</a></div></article>
+          <article class="guidance-card"><img src="/employers-guidance.jpg" alt="AVELIX employer guidance"><div class="guidance-body"><h3>For Employers</h3><p>Future AVELIX employer tools will help organizations discover talent using skills, experience, certification and location filters, then review profiles and invite candidates.</p><a class="guidance-link" href="/register.html">Create an AVELIX account →</a></div></article>
+        </div>
+        <div class="job-guide"><strong>How qualification matching works</strong><span>1. Add your skills, qualifications and certificates → 2. AVELIX compares them with job requirements → 3. Review matched opportunities → 4. Apply through the employer's application link.</span></div>
+      </section>
+
+      <section class="section">
+        <div class="sectionhead"><span class="kicker">Coming soon</span><h2>Choose your future AVELIX card.</h2><p>These card experiences are planned for the AVELIX verification ecosystem.</p></div>
+        <div class="card-showcase">
+          <article class="show-card"><span class="soon-badge">COMING SOON</span><img src="/avelix-basic-card.png" alt="AVELIX Basic Card design"><h3>Basic AVELIX Card</h3><p>Digital and physical identity card experience connected to your AVELIX profile.</p></article>
+          <article class="show-card"><span class="soon-badge">COMING SOON</span><img src="/avelix-platinum-card.png" alt="AVELIX Platinum Card design"><h3>Platinum AVELIX Card</h3><p>Premium identity experience designed for verified members.</p></article>
+        </div>
+      </section>
 
       <section class="section" id="how">
         <div class="sectionhead"><span class="kicker">Why AVELIX</span><h2>One identity. More possibilities.</h2><p>Start with a powerful digital profile today. As AVELIX grows, your identity can grow with it.</p></div>
@@ -97,4 +123,5 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0;color:#68738b;f
   </div>
 </div>
 </body>
-  </html>
+                                                                                  </html>
+                                                                                  
