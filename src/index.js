@@ -464,9 +464,11 @@ function adminPage(){return shell('AVELIX Admin Control Center',`<section class=
     if (appPages[url.pathname] === 'dashboard') return dashboardPage();
     return env.ASSETS.fetch(request);
   } catch (e) {
-  console.error('REGISTER_ERROR:', e);
-  return json({
-    error: 'Server error. Please try again.',
-    detail: e?.message || String(e)
-  }, 500);
-  }
+  return new Response(
+    'REGISTER_ERROR: ' + (e?.stack || e?.message || String(e)),
+    {
+      status: 500,
+      headers: { 'Content-Type': 'text/plain' }
+    }
+  );
+}
