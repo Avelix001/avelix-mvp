@@ -404,7 +404,7 @@ async function profilePage(request, env){
   const cardNames={basic:'Basic Card',platinum:'Platinum Card',gold:'Gold Card'};
   const levelNames={individual:'Basic Individual',entrepreneur:'Platinum Professional',business:'Gold Business'};
   const safe=(v)=>esc(v??'');
-  const attrSafe=(v)=>attr(v??'');
+  const attrSafe=(v)=>esc(v??'');
   const verificationTypes=[['identity','Identity'],['education','Education'],['employment','Employment'],['certification','Certification'],['business','Business / CAC']];
   const statusFor=(type)=>{ const c=credentials.find(x=>String(x.credential_type||'').toLowerCase()===type); return c?String(c.status||'pending').toLowerCase():'not submitted'; };
   const verificationCards=verificationTypes.map(([type,label])=>{
