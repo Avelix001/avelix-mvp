@@ -32,3 +32,25 @@ Paid credential verification is accepted only for institutions whose status is `
 
 ## MVP storage note
 Verification documents and profile photos use D1 base64 storage for this MVP. Move these files to Cloudflare R2 before significant scale.
+
+## Build 12 patch notes
+- Preserves the existing landing page, crowned AVELYX verification emblem, profile, account-type flows and card artwork.
+- Replaces generic advertisement placeholders with cropped AVELYX adverts that do not contain app-store/download messaging.
+- Dashboard uses the compact “Stay Ahead With AVELYX” advert; other authenticated pages use the compact verified-card advert.
+- Dashboard no longer depends on a `wallets` table to load member identity/balance. AVX balance is read from `profiles.avx_balance`, matching the existing MVP schema.
+- Credential verification debits/refunds `profiles.avx_balance` instead of requiring a separate `wallets` table.
+- Removes the duplicate admin credential INSERT that could break credential issuance.
+- Adds `/admin-login.html` and `/api/admin/check` for clearer admin entry/testing.
+- Admin authorization still requires the Cloudflare Worker variable `ADMIN_EMAIL` to exactly match the administrator's AVELYX login email. Do not put the admin password in source code.
+- Wallet now shows the live AVX balance, activity history and active package cards. Member-to-member sending/trading/cash-out remain disabled.
+
+## Cloudflare variable required for admin
+In Cloudflare Worker settings, add:
+`ADMIN_EMAIL` = the exact email used by the administrator's AVELYX account.
+Then log in at `/admin-login.html` and enter the same AVELYX email/password.
+
+## Build 14 additions
+- 1 AVX = NGN 100 for AVX package configuration.
+- Credential-specific verification pricing is admin-controlled.
+- Verification payment approval captures AVX into the admin wallet.
+- Admin agent and future card approval controls are included.
