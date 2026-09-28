@@ -1,0 +1,29 @@
+-- AVELYX Build 14 admin controls. Optional: Worker auto-creates these tables with IF NOT EXISTS.
+CREATE TABLE IF NOT EXISTS admin_wallet (
+  id INTEGER PRIMARY KEY CHECK(id=1),
+  balance INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+INSERT OR IGNORE INTO admin_wallet(id,balance) VALUES (1,0);
+
+CREATE TABLE IF NOT EXISTS credential_pricing (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  credential_type TEXT NOT NULL UNIQUE,
+  avx_cost INTEGER NOT NULL DEFAULT 0,
+  active INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS agents (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT,
+  phone TEXT,
+  state TEXT,
+  role TEXT NOT NULL DEFAULT 'Agent',
+  status TEXT NOT NULL DEFAULT 'active',
+  notes TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_agents_status ON agents(status,name);
