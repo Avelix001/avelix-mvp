@@ -140,6 +140,25 @@ const SECTOR_MATRIX = {
   'Community Organizations & Associations':['Organisation registration where applicable','Leadership identity','Address','Membership/mandate evidence','Supporting documents','References']
 };
 
+async function getSettings(env){
+  const defaults = {
+    cards_enabled: '1',
+    ai_matching_cost: '10',
+    ai_digital_cv_cost: '10',
+    support_email: 'support@avelyx.ng',
+    verification_cost_avx: '0'
+  };
+  try {
+    const rows = await env.DB.prepare('SELECT key,value FROM platform_settings').all();
+    for (const row of (rows.results || [])) {
+      if (row && row.key) defaults[String(row.key)] = String(row.value ?? '');
+    }
+  } catch (e) {
+    // Keep safe defaults if the settings table is temporarily unavailable.
+  }
+  return defaults;
+}
+
 async function ensureNextgenTables(env){
   await env.DB.prepare(`CREATE TABLE IF NOT EXISTS digital_cv_data (profile_id INTEGER PRIMARY KEY,soft_skills TEXT,hard_skills TEXT,education TEXT,nysc TEXT,awards TEXT,work_experience TEXT,professional_certifications TEXT,summary TEXT,updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(profile_id) REFERENCES profiles(id) ON DELETE CASCADE)`).run();
   await env.DB.prepare(`CREATE TABLE IF NOT EXISTS social_connections (id INTEGER PRIMARY KEY AUTOINCREMENT,profile_id INTEGER NOT NULL,platform TEXT NOT NULL,handle TEXT,status TEXT NOT NULL DEFAULT 'connected',created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,UNIQUE(profile_id,platform),FOREIGN KEY(profile_id) REFERENCES profiles(id) ON DELETE CASCADE)`).run();
